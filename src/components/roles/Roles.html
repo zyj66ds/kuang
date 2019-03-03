@@ -1,0 +1,52 @@
+<div>
+  <el-breadcrumb class="bread" separator-class="el-icon-arrow-right">
+    <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+    <el-breadcrumb-item>权限管理</el-breadcrumb-item>
+    <el-breadcrumb-item>角色列表</el-breadcrumb-item>
+  </el-breadcrumb>
+
+  <el-table :data="rolesTableData" style="width: 100%">
+    <el-table-column type="expand">
+      <template slot-scope="scope">
+        <el-row class="row1" v-for="item1 in scope.row.children" :key="item1.id">
+          <el-col :span="4">
+            <el-tag>{{ item1.authName }}</el-tag><i class="el-icon-arrow-right"></i>
+          </el-col>
+          <el-col :span="20">
+            <el-row class="row2" v-for="item2 in item1.children" :key="item2.id">
+              <el-col :span="4">
+                <el-tag type="success">{{ item2.authName }}</el-tag><i class="el-icon-arrow-right"></i>
+              </el-col>
+              <el-col :span="20">
+                <el-tag class="row3" v-for="item3 in item2.children" type="warning" :key="item3.id">{{ item3.authName
+                  }}</el-tag>
+              </el-col>
+            </el-row>
+          </el-col>
+        </el-row>
+      </template>
+    </el-table-column>
+    <el-table-column type="index" :index="modelIndex"></el-table-column>
+    <el-table-column prop="roleName" label="角色列表" width="180">
+    </el-table-column>
+    <el-table-column prop="roleDesc" label="描述" width="180">
+    </el-table-column>
+    <el-table-column label="操作">
+      <template slot-scope='scope'>
+        <el-button plain type="primary" size="mini" icon="el-icon-edit"></el-button>
+        <el-button plain type="danger" size="mini" icon="el-icon-delete"></el-button>
+        <el-button plain type="success" size="mini" icon="el-icon-check" @click='showAssignRightsDialog(scope.row)'>分配权限</el-button>
+      </template>
+    </el-table-column>
+  </el-table>
+
+  <el-dialog title="角色授权" :visible.sync="dialogRightsVisible">
+    <el-tree :data="data2" ref="tree" show-checkbox node-key="id" :default-expand-all="true" :props="defaultProps">
+    </el-tree>
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="dialogRightsVisible = false">取 消</el-button>
+      <el-button type="primary" @click="assignRights">确 定</el-button>
+    </span>
+  </el-dialog>
+
+</div>

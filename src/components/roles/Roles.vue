@@ -1,10 +1,8 @@
-<template>
-  <h1>角色</h1>
-</template>
 
-<script>
-export default {}
+<template src='./Roles.html'></template>
+
+<script src='./Roles.js'>
 </script>
 
-<style>
+<style src='./Roles.less' lang='less' scoped>
 </style>

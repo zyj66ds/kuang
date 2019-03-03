@@ -1,10 +1,6 @@
-<template>
-  <h1>用户</h1>
-</template>
 
-<script>
-export default {}
-</script>
+<template src='./Users.html' ></template>
 
-<style>
-</style>
+<script src='./Users.js'></script>
+
+<style src='./Users.less'></style>

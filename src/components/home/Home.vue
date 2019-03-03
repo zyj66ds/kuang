@@ -97,6 +97,7 @@ body,
   .container {
     height: 100%;
     min-width: 860px;
+    background-color: #EAEEF1;
     .header {
       background-color: #b3c1cd;
       h1 {
