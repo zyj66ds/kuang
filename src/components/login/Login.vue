@@ -66,6 +66,7 @@ export default {
               })
             }
           })
+        this.$router.push('/home')
       })
     },
     resetForm () {
