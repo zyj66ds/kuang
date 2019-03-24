@@ -1,10 +1,10 @@
-<template>
-  <p>财务审批</p>
+<template src="./approval.html">
+
 </template>
 
-<script>
-export default {}
+<script src="./approval.js">
+
 </script>
 
-<style>
+<style src="./approval.css">
 </style>

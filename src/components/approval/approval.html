@@ -1,0 +1,121 @@
+<div>
+  <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick">
+    <el-tab-pane label="全部订单" name="first"> </el-tab-pane>
+    <el-tab-pane label="待审核" name="second"></el-tab-pane>
+    <el-tab-pane label="同意" name="third"></el-tab-pane>
+    <el-tab-pane label="不同意" name="fourth"></el-tab-pane>
+    <!-- 表格 -->
+    <el-table :data="tableData" style="width: 100%">
+      <el-table-column prop="id" label="采购申请id" width="180">
+      </el-table-column>
+      <el-table-column prop="time" label="采购申请时间" width="180">
+      </el-table-column>
+      <el-table-column prop="status" label="申请状态"></el-table-column>
+      <el-table-column prop="perform" label="操作">
+        <el-button @click="centerDialogVisible = true" size="mini"
+          >查看详情</el-button
+        ></el-table-column
+      >
+    </el-table>
+  </el-tabs>
+  <!-- 分页 -->
+  <el-pagination
+    background
+    layout="prev, pager, next"
+    :total="1000"
+  ></el-pagination>
+  <!-- 模态框 -->
+  <!-- <el-button type="text" @click="centerDialogVisible = true"
+    >点击打开 Dialog</el-button
+  > -->
+  <el-dialog title="" :visible="centerDialogVisible" width="40%" center top="0">
+    <span
+      ><el-form
+        :label-position="labelPosition"
+        label-width="100px"
+        :model="formLabelAlign"
+        size="mini"
+      >
+        <el-form-item label="选择采购物料:">
+          <!-- <el-input v-model="formLabelAlign.name"></el-input>
+         -->
+          <el-select v-model="value" placeholder="请选择" clearable>
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            >
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="采购数量:">
+          <el-input v-model="formLabelAlign.region"></el-input>
+        </el-form-item>
+        <el-form-item label="货物单价:">
+          <el-input v-model="formLabelAlign.type"></el-input>
+        </el-form-item>
+        <el-form-item label="总价:">
+          <el-input v-model="formLabelAlign.type"></el-input>
+        </el-form-item>
+        <el-form-item label="申请原因:">
+          <el-input v-model="formLabelAlign.type"></el-input>
+        </el-form-item>
+        <el-form-item label="申请人:">
+          <el-input v-model="formLabelAlign.type"></el-input>
+        </el-form-item>
+        <el-form-item label="采购申请状态:">
+          <!-- <el-input v-model="formLabelAlign.type"></el-input>
+         -->
+          <!-- <el-row>
+            <el-button>待审核</el-button>
+            <el-button>同意</el-button>
+            <el-button>不同意</el-button>
+          </el-row> -->
+          <el-select v-model="note" placeholder="请选择" clearable>
+            <el-option
+              v-for="item in status"
+              :key="item.note"
+              v-model="item.label"
+              :note="item.note"
+            >
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="采购申请时间:">
+          <!-- <el-input v-model="formLabelAlign.type"></el-input> -->
+          <el-col :span="13">
+            <el-date-picker
+              type="date"
+              placeholder="选择日期"
+              style="width: 100%;"
+              v-model="date"
+            ></el-date-picker>
+          </el-col>
+          <el-col class="line" :span="1">-</el-col>
+          <el-col :span="10">
+            <el-time-picker
+              placeholder="选择时间"
+              style="width: 100%;"
+              v-model="time"
+            ></el-time-picker>
+          </el-col>
+        </el-form-item>
+        <el-form-item label="采购申请人:">
+          <el-input v-model="formLabelAlign.type"></el-input>
+        </el-form-item>
+      </el-form>
+    </span>
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="centerDialogVisible = false" size="small"
+        >取 消</el-button
+      >
+      <el-button
+        type="primary"
+        @click="centerDialogVisible = false"
+        size="small"
+        >确 定</el-button
+      >
+    </span>
+  </el-dialog>
+</div>

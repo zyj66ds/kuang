@@ -98,8 +98,9 @@ export default {
         },
         {
           authName: '财务审批',
-          path: 'approval',
-          id: 6
+
+          id: 6,
+          children: [{ authName: '财务审批', path: 'approval' }]
         },
         {
           authName: '统计汇总',
