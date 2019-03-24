@@ -67,7 +67,7 @@ export default {
             { authName: '销售任务管理', path: 'duty' },
             // { authName: '销售任务执行', path: 'execute' },
             { authName: '订单管理', path: 'order' },
-            { authName: '出库单管理', path: 'out' }
+            { authName: '出库单管理', path: 'out1' }
           ]
         },
         {
@@ -78,7 +78,7 @@ export default {
             { authName: '采购申请单', path: 'request' },
             { authName: '采购订单', path: 'sheet' },
             { authName: '入库单管理', path: 'in' },
-            { authName: '出库单管理', path: 'out' }
+            { authName: '出库单管理', path: 'out2' }
           ]
         },
         {

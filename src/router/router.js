@@ -5,6 +5,23 @@ import Login from '../components/login/Login.vue'
 import Info from '../components/info/Info.vue'
 import Enquiry from '../components/enquiry/Enquiry.vue'
 import Team from '../components/team/Team.vue'
+import Approval from '../components/approval/Approval.vue'
+import Backup from '../components/backup/Backup.vue'
+import Deposit from '../components/deposit/Deposit.vue'
+import Diary from '../components/diary/Diary.vue'
+import Duty from '../components/duty/Duty.vue'
+import In from '../components/in/In.vue'
+import Inc from '../components/inc/Inc.vue'
+import Material from '../components/material/Material.vue'
+import News from '../components/news/News.vue'
+import Order from '../components/order/Order.vue'
+import Out from '../components/out/Out.vue'
+import Outc from '../components/outc/Outc.vue'
+import Purchase from '../components/purchase/Purchase.vue'
+import Request from '../components/request/Request.vue'
+import Sales from '../components/sales/Sales.vue'
+import Sheet from '../components/sheet/Sheet.vue'
+import User from '../components/user/User.vue'
 Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [{
@@ -27,6 +44,60 @@ const router = new VueRouter({
     }, {
       path: '/team',
       component: Team
+    }, {
+      path: '/approval',
+      component: Approval
+    }, {
+      path: '/backup',
+      component: Backup
+    }, {
+      path: '/deposit',
+      component: Deposit
+    }, {
+      path: '/diary',
+      component: Diary
+    }, {
+      path: '/duty',
+      component: Duty
+    }, {
+      path: '/in',
+      component: In
+    }, {
+      path: '/inc',
+      component: Inc
+    }, {
+      path: '/material',
+      component: Material
+    }, {
+      path: '/news',
+      component: News
+    }, {
+      path: '/order',
+      component: Order
+    }, {
+      path: '/out1',
+      component: Out
+    }, {
+      path: '/out2',
+      component: Out
+    }, {
+      path: '/outc',
+      component: Outc
+    }, {
+      path: '/purchase',
+      component: Purchase
+    }, {
+      path: '/request',
+      component: Request
+    }, {
+      path: '/sales',
+      component: Sales
+    }, {
+      path: '/sheet',
+      component: Sheet
+    }, {
+      path: '/user',
+      component: User
     }]
   }
   ]
